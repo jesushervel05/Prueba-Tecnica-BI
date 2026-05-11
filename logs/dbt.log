@@ -1,0 +1,85 @@
+[0m13:35:10.881573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015FB6302F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015FB84F9810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015FB84F9E50>]}
+
+
+============================== 13:35:10.891988 | deda20b4-77d9-428d-821a-d08f45019cd2 ==============================
+[0m13:35:10.891988 [info ] [MainThread]: Running with dbt=1.11.9
+[0m13:35:10.894540 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'write_json': 'True', 'log_format': 'default', 'use_colors': 'True', 'no_print': 'None', 'warn_error': 'None', 'indirect_selection': 'eager', 'partial_parse': 'True', 'log_path': 'logs', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'profiles_dir': 'C:\\Users\\jose.hernandezv\\.dbt', 'invocation_command': 'dbt debug', 'printer_width': '80', 'target_path': 'None'}
+[0m13:35:10.951781 [info ] [MainThread]: dbt version: 1.11.9
+[0m13:35:10.952568 [info ] [MainThread]: python version: 3.13.1
+[0m13:35:10.953475 [info ] [MainThread]: python path: C:\Users\jose.hernandezv\AppData\Local\Programs\Python\Python313\python.exe
+[0m13:35:10.954026 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m13:35:10.955478 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Syntax error near line 1
+  ------------------------------
+  1  | ecommerce_dbt: echo target: dev echo outputs: echo dev: echo type: bigquery echo method: oauth echo project: ecommerce-bi-prueba echo dataset: dbt_dev echo threads: 4 echo timeout_seconds: 300
+  
+  Raw Error:
+  ------------------------------
+  mapping values are not allowed in this context
+    in "<unicode string>", line 1, column 27
+[0m13:35:10.956953 [debug] [MainThread]: Command `dbt debug` failed at 13:35:10.956818 after 0.35 seconds
+[0m13:35:10.957385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015FB8451350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015FB83D2690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015FB84716A0>]}
+[0m13:35:10.957767 [debug] [MainThread]: Flushing usage events
+[0m13:35:12.607409 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:41:54.709965 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B8BC1F6BA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B8B8CBB390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B8BE3D3B10>]}
+
+
+============================== 13:41:54.716495 | 04feec96-f3c8-44b5-ada3-560b0c30b1cc ==============================
+[0m13:41:54.716495 [info ] [MainThread]: Running with dbt=1.11.9
+[0m13:41:54.717392 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'profiles_dir': 'C:\\Users\\jose.hernandezv\\.dbt', 'use_colors': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'warn_error': 'None', 'indirect_selection': 'eager', 'partial_parse': 'True', 'log_path': 'logs', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'use_experimental_parser': 'False', 'version_check': 'True', 'introspect': 'True', 'quiet': 'False', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'invocation_command': 'dbt debug', 'printer_width': '80', 'target_path': 'None'}
+[0m13:41:54.741192 [info ] [MainThread]: dbt version: 1.11.9
+[0m13:41:54.742495 [info ] [MainThread]: python version: 3.13.1
+[0m13:41:54.743627 [info ] [MainThread]: python path: C:\Users\jose.hernandezv\AppData\Local\Programs\Python\Python313\python.exe
+[0m13:41:54.744709 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m13:41:58.650728 [info ] [MainThread]: Using profiles dir at C:\Users\jose.hernandezv\.dbt
+[0m13:41:58.651766 [info ] [MainThread]: Using profiles.yml file at C:\Users\jose.hernandezv\.dbt\profiles.yml
+[0m13:41:58.652876 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\jose.hernandezv\ecommerce_dbt\dbt_project.yml
+[0m13:41:58.653815 [info ] [MainThread]: adapter type: bigquery
+[0m13:41:58.654496 [info ] [MainThread]: adapter version: 1.11.1
+[0m13:41:58.655285 [info ] [MainThread]: Configuration:
+[0m13:41:58.655913 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:41:58.656540 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m13:41:58.657000 [info ] [MainThread]: Required dependencies:
+[0m13:41:58.657446 [debug] [MainThread]: Executing "git --help"
+[0m13:41:58.839609 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:41:58.840516 [debug] [MainThread]: STDERR: "b''"
+[0m13:41:58.841153 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:41:58.841611 [info ] [MainThread]: Connection:
+[0m13:41:58.842287 [info ] [MainThread]:   method: oauth
+[0m13:41:58.843293 [info ] [MainThread]:   database: ecommerce-bi-prueba
+[0m13:41:58.844507 [info ] [MainThread]:   execution_project: ecommerce-bi-prueba
+[0m13:41:58.845365 [info ] [MainThread]:   schema: dbt_dev
+[0m13:41:58.846101 [info ] [MainThread]:   location: None
+[0m13:41:58.846778 [info ] [MainThread]:   priority: None
+[0m13:41:58.847241 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m13:41:58.847734 [info ] [MainThread]:   impersonate_service_account: None
+[0m13:41:58.848198 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m13:41:58.848631 [info ] [MainThread]:   job_retries: 1
+[0m13:41:58.849036 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m13:41:58.849466 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m13:41:58.849880 [info ] [MainThread]:   timeout_seconds: 300
+[0m13:41:58.850302 [info ] [MainThread]:   client_id: None
+[0m13:41:58.850692 [info ] [MainThread]:   token_uri: None
+[0m13:41:58.851076 [info ] [MainThread]:   compute_region: None
+[0m13:41:58.851480 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m13:41:58.851900 [info ] [MainThread]:   gcs_bucket: None
+[0m13:41:58.852303 [info ] [MainThread]:   dataproc_batch: None
+[0m13:41:58.852973 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m13:41:59.590331 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m13:41:59.590813 [debug] [MainThread]: On debug: select 1 as id
+[0m13:41:59.591173 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:42:03.439202 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=ecommerce-bi-prueba&j=bq:US:664036dd-4f95-4436-b072-2b4f74391a1d&page=queryresults
+[0m13:42:03.694317 [debug] [MainThread]: SQL status: OK in 0.254 seconds
+[0m13:42:04.310907 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:42:04.312050 [info ] [MainThread]: [31m1 check failed:[0m
+[0m13:42:04.313195 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\jose.hernandezv\ecommerce_dbt\dbt_project.yml> not found
+
+[0m13:42:04.315645 [debug] [MainThread]: Command `dbt debug` failed at 13:42:04.315431 after 9.89 seconds
+[0m13:42:04.316136 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:42:04.316587 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B8D0830FC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B8D0861370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B8D1970160>]}
+[0m13:42:04.317063 [debug] [MainThread]: Flushing usage events
+[0m13:42:05.007444 [debug] [MainThread]: An error was encountered while trying to flush usage events
