@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Ordenes limpias sin duplicados y status normalizado"
+    columns:
+      - name: order_id
+        description: "Identificador unico de la orden"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "ID del cliente"
+        tests:
+          - not_null
+      - name: order_status
+        description: "Estado normalizado en lowercase"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['completed', 'pending', 'cancelled', 'processing']
+
+  - name: stg_customers
+    description: "Clientes limpios con nombres nulos reemplazados"
+    columns:
+      - name: customer_id
+        description: "Identificador unico del cliente"
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "Email del cliente en minusculas"
+        tests:
+          - not_null
+
+  - name: stg_products
+    description: "Catalogo de productos con precios validos"
+    columns:
+      - name: product_id
+        description: "Identificador unico del producto"
+        tests:
+          - unique
+          - not_null
+      - name: price
+        description: "Precio del producto mayor a cero"
+        tests:
+          - not_null
+
+  - name: stg_order_items
+    description: "Items de ordenes con cantidades validas mayores a cero"
+    columns:
+      - name: order_item_id
+        description: "Surrogate key generado como hash"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "Referencia a la orden"
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
+      - name: product_id
+        description: "Referencia al producto"
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id
+      - name: quantity
+        description: "Cantidad de unidades positivas"
+        tests:
+          - not_null

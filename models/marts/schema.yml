@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: mart_orders_summary
+    description: "Tabla final con una fila por orden y sus metricas de revenue e items"
+    columns:
+      - name: order_id
+        description: "Identificador unico de la orden"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "ID del cliente que realizo la orden"
+        tests:
+          - not_null
+      - name: order_status
+        description: "Estado de la orden siempre en lowercase"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['completed', 'pending', 'cancelled', 'processing']
+      - name: total_revenue
+        description: "Revenue total de la orden"
+        tests:
+          - not_null
+      - name: total_items
+        description: "Numero de items en la orden"
+      - name: order_date
+        description: "Fecha de la orden"
+
+  - name: mart_customer_ltv
+    description: "Tabla de lifetime value por cliente con segmentacion de negocio"
+    columns:
+      - name: customer_id
+        description: "Identificador unico del cliente"
+        tests:
+          - unique
+          - not_null
+      - name: customer_name
+        description: "Nombre del cliente. Sin Nombre si el raw tenia NULL"
+        tests:
+          - not_null
+      - name: email
+        description: "Email del cliente en minusculas"
+        tests:
+          - not_null
+      - name: total_orders
+        description: "Total de ordenes validas del cliente"
+        tests:
+          - not_null
+      - name: total_revenue
+        description: "Revenue acumulado del cliente en todas sus ordenes"
+        tests:
+          - not_null
+      - name: customer_segment
+        description: "VIP si revenue mayor 5000, Regular si mayor 500, Nuevo si menos de 2 ordenes"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['VIP', 'Regular', 'Nuevo']
+      - name: first_order_date
+        description: "Fecha de la primera orden del cliente"
+      - name: last_order_date
+        description: "Fecha de la orden mas reciente"
